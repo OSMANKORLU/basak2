@@ -15,7 +15,7 @@ def welcome_index(request):
 
 
 
-	welcome = Home.objects.all()
+	welcome = Welcome.objects.all()
 
 
 
