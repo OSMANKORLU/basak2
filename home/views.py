@@ -43,7 +43,7 @@ def welcome_detail(request,slug):
 
 def home_index(request):
 
-
+	welcome = Home.objects.all()
 	home=Home.objects.all()
 
 
@@ -60,7 +60,7 @@ def home_index(request):
 
 	home = paginator.get_page(sayfa)
 
-	return render(request,'home/index.html',{'home':home})
+	return render(request,'home/index.html',{'home':home, 'welcome': welcome})
 
 def home_detail(request,slug):
 	home = get_object_or_404(Home,slug=slug)
