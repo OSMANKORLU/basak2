@@ -1,0 +1,77 @@
+
+
+
+
+         <!--Header Start-->
+         <header class="header-style-2">
+            <nav class="navbar navbar-expand-lg">
+               <a class="navbar-brand" href="index-2.html"><img src="/media/h2logo.png" alt=""></a>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <i class="fas fa-bars"></i> </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                 
+                 {% if request.user.is_authenticated %}
+                     <li class="nav-item"><a class="nav-link" href="{% url 'post:create' %}">İçerik Ekle</a></li>{% endif %}
+                     <li class="nav-item"> <a class="nav-link" href="{% url 'home:home' %}">AnaSayfa</a> </li>
+                     <li class="nav-item"> <a class="nav-link" href="{% url 'post:index' %}">Ürünler</a> </li>
+                     <li class="nav-item"> <a class="nav-link" href="about.html">About</a> </li>
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="events-grid.html"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Events </a>
+                        <ul class="dropdown-menu" >
+                           <li><a href="events-grid.html">Events Grid</a></li>
+                           <li><a href="events-grid-2.html">Events Grid Two</a></li>
+                           <li><a href="events-grid-3.html">Events Grid Three</a></li>
+                           <li><a href="events-list.html">Events List</a></li>
+                           <li><a href="events-list-two.html">Events List Two</a></li>
+                           <li><a href="event-details.html">Event Details</a></li>
+                        </ul>
+                     </li>
+    
+
+
+
+
+
+
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="contact.html"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Contact </a>
+                        <ul class="dropdown-menu" >
+                           <li><a href="contact-one.html">Contact One</a> </li>
+                           <li><a href="contact-two.html">Contact Two</a> </li>
+                        </ul>
+                     </li>
+                  </ul>
+                  <ul class="topnav-right">
+                     <li> <a class="mdonate" href="donation.html"><span>Make a Donation</span></a> </li>
+                     <li> <a class="search-icon" href="#search"> <i class="fas fa-search"></i> </a> </li>
+                     <li class="dropdown">
+                        <a class="cart-icon" href="#" role="button" id="cartdropdown" data-toggle="dropdown"> <i class="fas fa-shopping-cart"></i></a>
+                        <div class="dropdown-menu cart-box" aria-labelledby="cartdropdown">
+                           Recently added item(s)
+                           <ul class="list">
+                              <li class="item">
+                                 <a href="#" class="preview-image"><img class="preview" src="images/pro.jpg" alt=""></a>
+                                 <div class="description"> <a href="#">Sample Course</a> <strong class="price">1 x $44.95</strong> </div>
+                              </li>
+                              <li class="item">
+                                 <a href="#" class="preview-image"><img class="preview" src="images/pro.jpg" alt=""></a>
+                                 <div class="description"> <a href="#">Sample Course</a> <strong class="price">1 x $44.95</strong> </div>
+                              </li>
+                           </ul>
+                           <div class="total">Total: <strong>$44.95</strong></div>
+                           <div class="view-link"><a href="#">Proceed to Checkout</a> <a href="#">View cart </a></div>
+                        </div>
+                     </li>
+                     <li class="login-reg"> <a href="my-account.html">Login</a> | <a href="my-account.html">Signup</a> </li>
+                  </ul>
+               </div>
+            </nav>
+         </header>
+         <div id="search">
+            <button type="button" class="close">×</button>
+            <form class="search-overlay-form">
+               <input type="search" value="" placeholder="type keyword(s) here" />
+               <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
+            </form>
+         </div>
+         <!--Header End--> 

@@ -1,0 +1,131 @@
+
+zzzzzzzzzz
+
+{% for welcome in  welcome %}
+       <p> {{ welcome.title }} </p>
+  {% endfor %}
+
+zzzzzzzzz
+<section>
+
+	<div class="content">
+		{% for welcome in welcome  %}
+
+		<div class="welcome">
+			<div class="container">
+				<div class="wel-grids">
+				<div class="col-md-4 wel-grid">
+					<img src="{{ welcome.image.url }}" class="img-responsive" alt="" />
+					</div>
+					<div class="col-md-8 wel-grid1">
+
+			<h3>{{ welcome.title}}</h3>
+			<h6>Sed usto dolor, lobortis quis, lobortis dignissim, pulvinar ac, loremIn pede mi, aliquet sit amet, eu ismod in,auctor ut, ligula</h6>
+			<h5>PRAESENT JUSTO DOLOR, LOBORTIS QUIS, LOBOR</h5>
+			<p>Fusce euismod consequat ante. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque sed dolor. Aliquam congue fermentum nisl. Mauris accumsan nulla vel diam. Sed in lacus ut enim adipiscing aliquet. Nulla venenatis.
+				</p>
+				<a href="{{ welcome.get_absolute_url }}" class="button">read more</a>
+		</div>
+		<div class="clearfix"> </div>
+		</div>
+		</div>
+	</div>
+		{% endfor  %}
+
+		<d>
+
+				<div class="news-grids">
+				<div class="col-md-6 news-grid">
+<a href="images/img6.jpg" class="swipebox"><img src="images/img6.jpg" /></a>
+					<div class="news-info">
+						<h4>Steady growth for your farm!</h4>
+						<p>09/01/2015</p>
+						<a href="#" class="button1"> read the news</a>
+						</div>
+					</div>
+					<div class="col-md-6 news-grid1">
+						<div class="news-grid2">
+<a href="images/img7.jpg" class="swipebox"><img src="images/img7.jpg" /></a>
+						<div class="news-info1">
+						<h4>The best apples!</h4>
+						<p>19/04/2015</p>
+						<a href="#" class="button1"> read the news</a>
+						</div>
+						</div>
+						<div class="news-grid3">
+<a href="images/img8.jpg" class="swipebox"><img src="images/img8.jpg" /></a>
+						<div class="news-info1">
+						<h4>It’s a hard work!</h4>
+						<p>29/02/2015</p>
+						<a href="#" class="button1"> read the news</a>
+						</div>
+						</div>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+
+
+			<div class="google-map">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d3105.6247032762103!2d-77.030374!3d38.8868275!3m2!1i1024!2i768!4f13.1!2m1!1susda+agriculture!5e0!3m2!1sen!2sin!4v1430823037391"> 
+					</iframe>
+				</div>
+		<div class="contact-section">
+			<div class="container">
+				<h3> LEAVE US A MESSAGE</h3>
+				<div class="contact-grid">
+			<div class="col-md-4 contactgrid">
+				<input type="text" class="text" value=" name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = ' name';}">
+				</div>
+				<div class="col-md-4 contactgrid">
+				<input type="text" class="text" value="email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'email';}">
+				</div>
+				<div class="col-md-4 contactgrid">
+				<input type="text" class="text" value="phone" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'phone';}">
+				</div>
+				<div class="clearfix"> </div>
+				<div class="col-md-12 contactgrid1">
+				<textarea onfocus="if(this.value == 'Your Message') this.value='';" onblur="if(this.value == '') this.value='Your Message';" >Your Message</textarea>
+				</div>
+				<div class="contactgrid2">
+				<input type="button" value="send message">
+			   </div>
+			   
+				</div>
+
+				</div>
+			</div>
+			<div class="footer-section">
+				<div class="container">
+					<div class="footer-top">
+								<div class="social-icons">
+										<a href="#"><i class="icon1"></i></a>
+										<a href="#"><i class="icon2"></i></a>
+										<a href="#"><i class="icon3"></i></a>
+									</div>
+								</div>
+
+					<div class="footer-bottom">
+									<p> Copyright &copy;2015  All rights  Reserved | Template by<a href="http://w3layouts.com" target="target_blank">W3Layouts</a></p>
+									</div>
+									 <script type="text/javascript">
+						$(document).ready(function() {
+							/*
+							var defaults = {
+					  			containerID: 'toTop', // fading element id
+								containerHoverID: 'toTopHover', // fading element hover id
+								scrollSpeed: 1200,
+								easingType: 'linear' 
+					 		};
+							*/
+							
+							$().UItoTop({ easingType: 'easeOutQuart' });
+							
+						});
+					</script>
+				<a class="scroll" href="#home" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+								</div>
+							</div>
+
+

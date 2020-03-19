@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+
+{% block title %} Anasayfa - {{ block.super }}  {% endblock %}
+
+{% block body %}
+
+{# 		<a href="{% url 'detail' id=post.id %}">{{ post.title}}</a><br>  #}
+				 
+
+   {% if yedek %}
+
+
+<div class="container">
+		{% for post in posts  %}
+		<div class="row">
+		  <div class="col-md-6 col-md-offset-3">
+		    <div class="thumbnail">
+		    	{% if post.image %}
+		      <img src="{{ post.image.url }}" class="img-responsive">
+		      {% endif %}
+		      <div class="caption">
+		        <h3>{{ post.title}} <small>{{ post.publishing_date|timesince }}</small></h3>
+		        <h4>Yazar {{ post.user.get_full_name}}</h4>
+		        <p>{{ post.content|safe|linebreaks|truncatechars:250}}</p>
+		        <p><a href="{{ post.get_absolute_url }}" class="btn btn-primary" role="button">Detay</a>
+		        	{% if request.user.is_authenticated %}
+		        	<a href="{{ post.get_update_url }}" class="btn btn-default" role="button">Güncelle</a>
+		        	<a href="{{ post.get_delete_url }}" class="btn btn-danger" role="button">Sil</a>
+		        	{% endif %}
+		        </p>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	
+	{% endfor %}
+		<div class="row">
+		  <div class="col-md-3 col-md-offset-3">
+					<div class="pagination">
+				    <span class="step-links">
+				        {% if posts.has_previous %}
+				            <a href="?sayfa=1">&laquo; Başadon</a>
+				            <a href="?sayfa={{ posts.previous_page_number }} {% if request.GET.q %} &q={{ request.GET.q }} {% endif %}">Önceki</a>
+				        {% endif %}
+
+				        <span class="current">
+				            Page {{ posts.number }} of {{ posts.paginator.num_pages }}.
+				        </span>
+
+				        {% if posts.has_next %}
+				            <a href="?sayfa={{ posts.next_page_number }}{% if request.GET.q %} &q={{ request.GET.q }} {% endif %}">next</a>
+				            <a href="?sayfa={{ posts.paginator.num_pages }} {% if request.GET.q %} &q={{ request.GET.q }} {% endif %}">last &raquo;</a>
+				        {% endif %}
+				    </span>
+				</div>
+	</div>
+</div>
+				        {% endif %}
+
+
+</div>
+
+
+<!--Contact Start-->
+         <section class="shop wf100 p80 " >
+         	            {% for post in posts  %}
+
+            <div class="container">
+               <div class="row">
+                  <!--Pro Box Start-->
+                  <div class="col-lg-3 col--sm3">
+                     <div class="product-box">
+                        <div class="pro-thumb"> <a href="{{ post.get_absolute_url }}">Ürün Detayları</a>{% if post.image %} <img src="{{ post.image.url }}" alt="">{% endif %}</div>
+
+                        <div class="pro-txt">
+                           <h6><a href="{{ post.get_absolute_url }}">{{ post.title}} </a></h6>
+                           <p class="pro-price"><del>$25.00</del> $19.00</p>
+                        </div>
+                     </div>
+                  </div>
+{% endfor %}
+                  <!--Pro Box End--> 
+               </div>
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="gt-pagination">
+                        <nav>
+                           <ul class="pagination">
+						{% if posts.has_previous %}
+
+							<li class="page-item"> <a class="page-link" href="?sayfa=1" aria-label="Previous"> <i class="fas fa-angle-double-left"></i> </a> </li>
+                              <li class="page-item"> <a class="page-link" href="?sayfa={{ posts.previous_page_number }} {% if request.GET.q %} &q={{ request.GET.q }} {% endif %}" aria-label="Previous"> <i class="fas fa-angle-left"></i> </a> </li>
+
+      					{% endif %}  
+                            				        
+	
+
+                             {# <li class="page-item"><a class="page-link" href="#">1</a></li>#}
+                              {#<li class="page-item active"><a class="page-link" href="#">2</a></li>#}
+                             {# <li class="page-item"><a class="page-link" href="#">3</a></li>#}
+				      
+				        {% if posts.has_next %}
+
+                              <li class="page-item"> <a class="page-link" href="?sayfa={{ posts.next_page_number }}{% if request.GET.q %} &q={{ request.GET.q }} {% endif %}" aria-label="Next"> <i class="fas fa-angle-right"></i> </a> </li>
+
+                              <li class="page-item"> <a class="page-link" href="?sayfa={{ posts.paginator.num_pages }} {% if request.GET.q %} &q={{ request.GET.q }} {% endif %}" aria-label="Next"> <i class="fas fa-angle-double-right"></i> </a> </li>
+{% endif %}
+                           </ul>
+                        </nav>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!--Contact End--> 
+         
+
+
+
+{% endblock %}
+
+
+
+        
+
+

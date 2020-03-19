@@ -1,0 +1,10 @@
+<div class="carousel-inner" role="listbox">
+    {% for home in home %}
+    <!-- item -->
+        <div class="carousel-item text-center text-light mb-5 {% if forloop.first %} active{% endif %}">
+            <img src="{{ home.image.url }}" class="img-fluid rounded-circle mb-3" width="150">
+            <p class="px-3">{{ home.description }}</p>
+        </div>
+    <!-- end item -->
+    {% endfor %}
+</div>

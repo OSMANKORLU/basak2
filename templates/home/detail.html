@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block body %}
+<!--Blog Start-->
+         <section class="wf100 p80 blog">
+            <div class="blog-details">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-lg-9 col-md-8">
+                        <!--Blog Single Content Start-->
+                        <div class="blog-single-content">
+                           <div class="blog-single-thumb img-responsive" >{% if home.image %}<img src="{{ home.image.url }}" alt=""> {% endif %}</div>
+                           <h3>{{ home.title }}</h3>
+                           <ul class="post-meta">
+                              <li><i class="fas fa-user-circle"></i> {{ home.user }}</li>
+                              <li><i class="fas fa-calendar-alt"></i> {{ home.publishing_date}}</li>
+                              <li><i class="fas fa-comments"></i> 134 Comments</li>
+                              <li class="tags"><i class="fas fa-tags"></i> <a href="#">Plant</a> <a href="#">Trees</a> <a href="#">Water</a> <a href="#">Recycling</a></li>
+                           </ul>
+                           <p>   
+
+                              {{ home.content |safe|linebreaks }}
+
+                            </p>
+    
+                        </div>
+               {% if request.user.is_authenticated %}
+               <a href="{{ home.get_update_url }}" class="btn btn-primary" role="button">Güncelle</a>
+               <a href="{{ home.get_delete_url }}" class="btn btn-danger" role="button">Sil</a>
+               {% endif %}  <!--Blog Single Content End--> 
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+         </section>
+
+
+
+   {% endblock %}
